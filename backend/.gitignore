@@ -1,0 +1,18 @@
+# 忽略 Python 缓存和虚拟环境
+__pycache__/
+*.py[cod]
+venv/
+.venv/
+env/
+
+# ⚠️ 绝对要忽略的环境变量文件 (保护 Key!)
+.env
+.env.local
+
+# 忽略 Node.js 依赖
+node_modules/
+dist/
+.DS_Store
+
+# 忽略 Cursor 本地配置
+.cursor/

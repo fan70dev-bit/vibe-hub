@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'JetBrains Mono', monospace;
+  background: #0a0a0f;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* 赛博朋克背景网格 + 霓虹光晕 */
+.cyber-bg {
+  position: fixed;
+  inset: 0;
+  background:
+    linear-gradient(180deg, transparent 0%, rgba(0, 245, 255, 0.03) 50%, transparent 100%),
+    linear-gradient(90deg, transparent 0%, rgba(255, 0, 170, 0.02) 50%, transparent 100%),
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 245, 255, 0.03) 2px,
+      rgba(0, 245, 255, 0.03) 4px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 2px,
+      rgba(255, 0, 170, 0.03) 2px,
+      rgba(255, 0, 170, 0.03) 4px
+    ),
+    radial-gradient(ellipse 80% 50% at 20% 40%, rgba(0, 245, 255, 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse 60% 40% at 80% 60%, rgba(255, 0, 170, 0.06) 0%, transparent 50%),
+    #0a0a0f;
+  z-index: 0;
+}
+
+.app-content {
+  position: relative;
+  z-index: 1;
+}
+
+/* 面板霓虹边框 */
+.panel-glow {
+  box-shadow:
+    0 0 0 1px rgba(0, 245, 255, 0.2),
+    0 0 30px rgba(0, 245, 255, 0.1),
+    inset 0 0 60px rgba(0, 0, 0, 0.5);
+}
+
+.panel-glow-magenta {
+  box-shadow:
+    0 0 0 1px rgba(255, 0, 170, 0.2),
+    0 0 30px rgba(255, 0, 170, 0.1),
+    inset 0 0 60px rgba(0, 0, 0, 0.5);
+}
+
+/* 终端光标闪烁 */
+@keyframes cursor-blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+.cursor-blink {
+  animation: cursor-blink 1s step-end infinite;
+}
